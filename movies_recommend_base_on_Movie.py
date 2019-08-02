@@ -6,11 +6,11 @@ import pandas as pd
 
 # Data Importing and Preprocessing
 
-r_cols = ['user_id', 'movie_id', 'rating']
-ratings = pd.read_csv('.../ml-100k/u.data', sep='\t', names=r_cols, usecols=range(3), encoding="ISO-8859-1")
+r_cols = ['user_id', 'movie_id', 'rating'] # User List with Movies's Star Rattings
+ratings = pd.read_csv('u.data', sep='\t', names=r_cols, usecols=range(3), encoding="ISO-8859-1")
 
-m_cols = ['movie_id', 'title']
-movies = pd.read_csv('.../ml-100k/u.item', sep='|', names=m_cols, usecols=range(2), encoding="ISO-8859-1")
+m_cols = ['movie_id', 'title'] # IMDB Movie List
+movies = pd.read_csv('u.item', sep='|', names=m_cols, usecols=range(2), encoding="ISO-8859-1")
 
 ratings = pd.merge(movies, ratings)
 
@@ -21,7 +21,7 @@ movieRatings.head()
 
 # Taking One Instance from the dataset for Analysis
 
-starWarsRatings = movieRatings['Star Wars (1977)']
+starWarsRatings = movieRatings['Star Wars (1977)'] # selecting Movie for Base Recommendation
 starWarsRatings.head()
 
 # Calculating Correlation
