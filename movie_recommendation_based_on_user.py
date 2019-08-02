@@ -6,10 +6,10 @@ import pandas as pd
 
 # Data Importing and Preprocessing
 
-r_cols = ['user_id', 'movie_id', 'rating']
+r_cols = ['user_id', 'movie_id', 'rating'] # User List with Movies's Star Rattings
 ratings = pd.read_csv('u.data', sep='\t', names=r_cols, usecols=range(3), encoding="ISO-8859-1")
 
-m_cols = ['movie_id', 'title']
+m_cols = ['movie_id', 'title'] # IMDB Movies List
 movies = pd.read_csv('u.item', sep='|', names=m_cols, usecols=range(2), encoding="ISO-8859-1")
 
 ratings = pd.merge(movies, ratings)
@@ -33,7 +33,7 @@ corrMatrix.head()
 
 # Data Preprocessing
 
-myRatings = userRatings.loc[0].dropna()
+myRatings = userRatings.loc[0].dropna() # Selecting User From user list for base recommendation
 myRatings
 
 # Writing a simulation to retrive similar movies
